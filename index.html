@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app='budgetApp'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle's Budget</title>
+    
+    <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel=stylesheet href="styles.css">         </link>
+</head>
+
+<body ng-controller="mainCtrl">
+    <div class="header">
+        <span class="headTitle">Kyle's Budget</span>
+    </div>
+    
+    
+    
+  <div class="main-container">
+            
+            <form>
+                <input type="text" placeholder="New envelope name here..." ng-model="env"/>
+                <input type="text" placeholder="Amount for envelope here:" ng-model="amt"/>
+                <input type="text" placeholder="(Checking/Savings/Cash)" ng-model="acct"/>
+                <button class="Submit" ng-click="addNewEnvelope(env, amt, acct)">Submit</button>
+            </form>
+        
+      
+      <li class="list-of-stuff" ng-repeat="envelope in envelopes">
+            
+            {{envelope.name}} -- {{envelope.amount}} -- {{envelope.account}} 
+            <button class="removeButton"  ng-click="removeEnvelope($index)">x</button>
+            </li>
+            
+            
+  </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.3.0/firebase.js"></script>
+
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+
+<!--UI-router-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    
+    
+<!--Angular-Material-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.4/angular-material.js"></script>
+    
+    
+<script src="scripts/app.js"></script>
+<script src="scripts/mainCtrl.js"></script>
+    
+    
+</body>
+</html>
